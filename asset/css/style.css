@@ -1,0 +1,437 @@
+:root{
+    --color-first:#669135;
+    --color-second:#1a250e;
+    --color-third:#e6f1da;
+    --color-fourth:#F3F8EC;
+    --color-white:#fff;
+    --text-large:50px;
+    --text-medium:40px;
+    --text-small:15px;
+    --text-regular:13px;
+    --font-weight-regular:400;
+    --font-weight-bold:700;
+    --box-shadow-main: 0px 15px 30px rgba(26,37,14,0.1);
+    --boder-radious:5px;
+    --animate: all .3s ease-in-out;
+}
+
+*{
+    font-family: 'Merriweather', serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    line-height: 1.3;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+p{
+    font-family: "Poppins", sans-serif;
+    font-size: var(--text-regular);
+    font-weight: 300;
+    color: var(--color-first);
+    line-height: 159.1%;
+}
+h1,h2{
+    color: var(--color-first);
+    font-weight: var(--font-weight-bold);
+    line-height: normal;
+    text-transform: capitalize;
+}
+h1{
+   font-size: var(--text-large); 
+   margin-bottom: 25px;
+
+}
+h2{
+    font-size: var(--text-medium);
+    margin-bottom: 25px;
+
+}
+h3{
+    color: var(--color-first);
+    font-size: var(--text-small);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 13px;
+}
+input:focus{
+    outline: none;
+}
+.img-fluid{
+    width: 100%;
+}
+
+main{
+    overflow-x: hidden;
+
+}
+
+.ptb-100{
+    padding: 100px 0;
+}
+.pt-100{
+    padding-top: 100px;
+}
+.bp-100{
+    padding-bottom: 100px;
+}
+.container{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    padding: 12px;
+    font-size: var(--text-regular);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--color-first);
+    border-radius: var(--boder-radious);
+    letter-spacing: 1.1px;
+ box-shadow: 0px 15px 40px rgba(102, 145, 53, 0.4);
+ text-align: center;
+ text-transform: capitalize;
+ border: 1px solid var(--color-first);
+ cursor: pointer;
+ transition: var(--animate);
+}
+.btn:hover{
+    background-color: transparent;
+    color: var(--color-first);
+    box-shadow: none;
+}
+
+.title-section{
+    width: 100%;
+    text-align: center;
+}
+.title-section p{
+    width: 50%;
+    margin:  0 auto;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+
+header{
+    height: 83px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background: var(--color-white);
+    transition: var(--animate);
+}
+header.fixed{
+    height: 70px;
+    box-shadow: var(--box-shadow-main);
+}
+nav{
+    height: 83px;
+    width: 100%;
+    padding: 20px 0;
+    transition: var(--animate);
+}
+.navigation-bar ul li{
+    position: relative;
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.navigation ul li:last-child{
+    margin-right: 0px;
+}
+.logo{
+    width: 40px;
+    height: 40px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.navigation-bar ul li a{
+    position: relative;
+    font-size: var(--text-regular);
+    color: var(--color-second);
+    font-weight: var(--font-weight-regular);
+    transition: var(--animate);
+}
+.navigation-bar ul li a:hover, .navigation-bar ul li.active{
+    color: var(--color-first);
+}
+.navigation-bar ul li a.btn{
+    color: var(--color-white);
+}
+.navigation-bar ul li a.btn:hover{
+    color: var(--color-second);
+}
+.navigation-bar ul li.active a::before{
+    content: '';
+    position: absolute;
+    top: auto;
+    left: 0;
+    bottom: -5px;
+    margin: auto;
+    width: 15px;
+    height: 3px;
+    border-radius: var(--boder-radious);
+    background-color: var(--color-first);
+}
+.toggle-open{
+    transition: .3s all ease-in-out;
+}
+
+.burger{
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+.burger img{
+    width: 100%;
+}
+.toggle-open.open{
+    display: none;
+}
+
+.toggle-close{
+    transition: .3s all ease-in-out;
+    display: none;
+}
+
+.toggle-close.close{
+    display:block;
+}
+@media (min-width:991px){
+    .navigation-bar{
+        display: block !important;
+    }
+}
+@media (max-width: 990px){
+    .burger{
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+    .navigation-bar{
+       display: none;
+       text-align: center;
+       position: absolute;
+       left: 0;
+       top: 70px;
+       width: 100%;
+       background-color: var(--color-second);
+       padding: 20px 0;
+       z-index: 2;
+
+    }
+    .navigation-bar ul li{
+        display: block;
+        margin: 15px 0;
+
+    }
+    .navigation-bar ul li a{
+        color: var(--color-white);
+    }
+    .navigation-bar ul li.active a::after{
+        right: 0;
+    }
+}
+
+
+/*-------------Home--------------*/
+.home{
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    padding-top: 98px;
+    align-items: center;
+    background-color: var(--color-fourth);
+}
+.home-image{
+    position: absolute;
+    right: 0;
+    width: 45%;
+    top: 0;
+    height: 100vh;
+    object-fit: cover;
+}
+.home-wrapper{
+    width: 50%;
+
+}
+.col p{
+    width: 81%;
+    margin-bottom: 50px;
+
+}
+
+/*---------------Brand-------------------*/
+.brand-img{
+    width: 50px;
+    height: 50px;
+    margin: 0 34px;
+}
+.brand-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/*-----------------Prooduct-------------------*/
+.product-wrapper{
+    width: 100%;
+    margin-top: 80px;
+    flex-wrap: wrap;
+}
+.product-item{
+    flex-wrap: wrap;
+    width: calc(33.3% - 31px);
+    background-color: red;
+    border-radius: var(--boder-radious);
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow-main);
+    margin: 0 31px 31px 0;
+}
+.product-item img{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px 5px 0 0;
+
+    object-fit: cover;
+
+}
+.product-item .product-content{
+    width: 100%;
+    padding: 30px 30px;
+}
+.product-content h3{
+    font-size: 18px;
+    color: rgba(26,37,14,0.7);
+}
+.product-content h3 span{
+    color: var(--color-first);
+}
+
+/*About Us*/
+.about-wrapper{
+    flex-wrap: wrap;
+
+}
+.about-image{
+    width: 55%;
+}
+.about-image img{
+    width: 100%;
+}
+.about-content{
+    width: 45%;
+    padding-left: 60px;
+
+}
+.about-content p{
+    margin-bottom: 15px;
+}
+.about-content .btn{
+    margin-top: 50px;
+    color: var(--color-white);
+}
+
+
+/*-----------------Letter------------------*/
+
+.letter-wrapper{
+    width: 42%;
+    margin: 50px auto 0;
+}
+.letter-wrapper input{
+    width: 330px;
+    background-color: var(--color-third);
+    height: 50px;
+    border-radius: var(--boder-radious);
+    padding: 0 25px;
+    font-size: var(--text-regular);
+    color: var(--color-first);
+    border: 0px;
+}
+.letter-wrapper input::placeholder{
+    color: var(--color-first);
+}
+.letter-wrapper .btn{
+    padding: 16px 30px;
+}
+/*------Footer-----*/
+.footer-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.footer-title h2{
+    font-size: var(--text-regular);
+}
+.footer-end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    position: relative;
+}
+.footer-end::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-first);
+}
+
+footer{
+    background-color: var(--color-second);
+}
+body{
+    position: relative;
+}
+.up{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-first);
+    right: 10px;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    border-radius: var(--boder-radious);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--animate);
+}
+.up-img{
+    color: #fff;
+}
+.show{
+    visibility: visible;
+    opacity: 1;
+}
